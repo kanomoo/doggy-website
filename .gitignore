@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# System files
+.DS_Store
+Thumbs.db
+.env
+.env.local
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Build & deployment
+dist/
+build/
+.cache
+
+# Prepros config (optional - comment out if you want to share it)
+prepros-6.config
