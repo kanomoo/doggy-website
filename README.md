@@ -24,25 +24,24 @@ A responsive static website dedicated to dogs, built with **HTML5**, **SCSS**, a
 ```
 doggy-website/
 ├── index.html              # Homepage
-├── about.html              # About page
-├── menu-*.html            # Menu pages (coffee, drink, cake, etc.)
-├── gallery.html           # Image gallery
-├── contact.html           # Contact form
-├── order.html             # Order page
-├── review-*.html          # Review pages
-├── css/
-│   ├── style.css          # Main stylesheet
-│   ├── bootstrap/         # Bootstrap utilities
-│   └── (other vendor CSS)
-├── js/
-│   ├── main.js            # Custom JavaScript
-│   ├── jquery-*.js        # jQuery and plugins
-│   └── (other vendor JS)
-├── images/                # Image assets organized by category
-├── fonts/                 # Font files
-├── scss/                  # SCSS source files
-├── README.md              # This file
-└── .gitignore             # Git ignore rules
+├── pages/                  # Main pages directory
+│   ├── about.html          # About page
+│   ├── gallery.html       # Image gallery
+│   ├── contact.html       # Contact form
+│   ├── giftshop.html      # Gift shop
+│   ├── order.html         # Order page
+│   ├── login.html         # Login page
+│   ├── register.html      # Registration page
+│   ├── menu/              # Menu categories (cake, coffee, etc.)
+│   ├── reviews/           # Customer reviews (food, location, dog)
+│   └── replies/           # Reply pages for reviews
+├── css/                    # Stylesheets
+├── js/                     # JavaScript files
+├── images/                 # Image assets
+├── fonts/                  # Font files
+├── scss/                   # SCSS source files
+├── README.md               # This file
+└── .gitignore              # Git ignore rules
 ```
 
 ## 🚀 Getting Started
@@ -64,130 +63,56 @@ xdg-open index.html
 ```bash
 # Python 3
 python -m http.server 8000
-
-# Python 2
-python -m SimpleHTTPServer 8000
-
-# Node.js (if available)
-npx http-server
 ```
 Then open http://localhost:8000 in your browser.
 
 ## 📋 Pages Available
 
-| Page | Description |
-|------|-------------|
-| `index.html` | Main homepage with hero section |
-| `about.html` | About the dog café and story |
-| `menu-*.html` | Different menu categories |
-| `gallery.html` | Photo gallery |
-| `giftshop.html` | Gift shop products |
-| `order.html` | Order/booking system |
-| `contact.html` | Contact information |
-| `review-*.html` | Customer reviews |
-| `login.html` | Login page |
-| `register.html` | Registration page |
+| Page | Location | Description |
+|------|----------|-------------|
+| **Home** | `index.html` | Main homepage with hero section |
+| **About** | `pages/about.html` | About the dog café and story |
+| **Menu** | `pages/menu/` | Different menu categories (main, cake, drink, etc.) |
+| **Gallery** | `pages/gallery.html` | Photo gallery |
+| **Gift Shop** | `pages/giftshop.html` | Gift shop products |
+| **Order** | `pages/order.html` | Order/booking system |
+| **Contact** | `pages/contact.html` | Contact information |
+| **Reviews** | `pages/reviews/` | Customer reviews (food, location, dog) |
+| **Replies** | `pages/replies/` | Detailed replies for reviews |
+| **Auth** | `pages/login.html` | Login & Register pages |
 
 ## 🎨 Customization
 
 ### Styling (SCSS)
-The project uses SCSS for advanced styling. Main stylesheet is located at `scss/style.scss`. Build SCSS to CSS using:
-```bash
-# Using Prepros (included in config)
-# Or use your own SCSS compiler
-```
+The project uses SCSS for advanced styling. Main stylesheet is located at `scss/style.scss`. 
 
 ### JavaScript
-Custom scripts are in `js/main.js`. The project uses:
-- jQuery for DOM manipulation
-- Bootstrap for responsive components
-- Custom vanilla JavaScript for specific features
+Custom scripts are in `js/main.js`. The project uses jQuery and Bootstrap plugins for animations and responsive components.
 
-## 📸 Key Sections
+## 🔧 Development Notes (Reorganization Update - May 2026)
 
-- **Header/Navigation** - Main menu and branding
-- **Hero Section** - Eye-catching banner
-- **Service Showcase** - Featured offerings
-- **Menu Display** - Product listings
-- **Gallery** - Image portfolio
-- **Reviews** - Customer testimonials
-- **Contact Section** - Location and inquiry form
-- **Footer** - Links and information
+The project structure has been organized to keep HTML files manageable:
 
-## 🔧 Development Notes
+- **Root Level**: Only `index.html` remains at the root for easy access.
+- **Pages Directory**: All other pages are moved to `pages/`.
+- **Sub-categorization**: Menus, reviews, and replies are further organized into subfolders.
 
-### Adding New Pages
-1. Create a new `.html` file
-2. Include common header and footer
-3. Link stylesheets and scripts
-4. Update navigation menus
-
-### Adding Images
-Place images in the appropriate subfolder under `/images`:
-- Gallery images → `/images/gallery/`
-- Menu items → `/images/mainmenu/`, `/images/coffee/`, etc.
-- Product photos → Organize by category
-
-### Modifying Styles
-1. Edit SCSS files in `/scss/`
-2. Compile to CSS
-3. Or directly edit `/css/style.css`
-
-## 📌 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## ✅ Best Practices Implemented
-
-- Semantic HTML5 markup
-- Mobile-first responsive design
-- Organized file structure
-- Modular SCSS architecture
-- Optimized images
-- Clean and readable code
-
-## 👥 Team Contribution
-
-This is a collaborative group project created as part of a web development fundamentals course. Each team member contributed to:
-- HTML structure and pages
-- SCSS styling and design
-- JavaScript functionality
-- Image assets and content
-
-## 📄 License
-
-This project is for educational purposes.
-
-## 🎯 Future Improvements
-
-- [ ] Implement backend functionality
-- [ ] Add form validation and submission
-- [ ] Optimize image loading
-- [ ] Improve performance metrics
-- [ ] Add dark mode option
-- [ ] Implement SEO best practices
+### Pathing Guidelines
+When adding or modifying links, ensure relative paths are correct:
+- From **Root** to **Pages**: `pages/filename.html`
+- From **Pages** to **Assets**: `../css/`, `../images/`, etc.
+- From **Menu/Reviews** to **Root**: `../../index.html`
+- From **Menu/Reviews** to **Assets**: `../../css/`, `../../images/`, etc.
 
 ---
 
-**Last Updated:** May 2026
+**Last Updated:** 14 พฤษภาคม 2569 (หลังการจัดระเบียบไฟล์)
 
-## หมายเหตุการแก้ไขที่ทำในไฟล์ index.html
-- แก้ปุ่ม "Add to cart" ที่ปิดด้วยแท็กผิด (</a>) เป็น </button> เพื่อให้ HTML ถูกต้องและปุ่มทำงานได้
-- ปรับ path รูปที่มีช่องว่างให้เป็น quoted URL (ตัวอย่าง: 'images/cake/Chocolate Lava Cakes.jpg')
-- เพิ่ม overlay element:
-  - <div id="offcanvasOverlay" class="offcanvas-overlay" onclick="closeSidebar()"></div>
-  เพื่อให้ overlay ด้านหลังทำงานเมื่อเปิด sidebar
-- ปรับสคริปต์ openSidebar/closeSidebar ให้เช็คการมีอยู่ของ element ก่อนเรียก classList เพื่อป้องกัน error ถ้า element ยังไม่อยู่ใน DOM
-
----
-
-## แนะนำการปรับแต่งสั้นๆ
-- เพิ่ม/แก้ไขเมนู: แก้ใน index.html ที่บล็อกเมนู (div class="block-7")
-- เปลี่ยนสไตล์: แก้ css/style.css
-- เชื่อม backend: เปลี่ยนปุ่มหรือฟอร์มเป็นการ POST ไปยัง API ของคุณ
+## สรุปการแก้ไขล่าสุด
+- **จัดระเบียบไฟล์ HTML**: แยกไฟล์ลงในโฟลเดอร์ `pages/`, `pages/menu/`, `pages/reviews/`, และ `pages/replies/`
+- **แก้ไข Path ทั้งระบบ**: ปรับลิงก์ Assets (CSS, JS, Images) และลิงก์นำทาง (Navigation) ทั้งหมดให้ทำงานได้ถูกต้องตามโครงสร้างใหม่
+- **แก้ไขปุ่ม Add to Cart**: ซ่อมแซม Tag HTML ที่ผิดพลาดในหน้าเมนูทั้งหมด
+- **แก้ไขระบบ Order**: ปรับ Form Action และ Layout ของ Cart Sidebar ให้รองรับโครงสร้างโฟลเดอร์ใหม่และแสดงผลสวยงามขึ้น
+- **แก้ไขภาพหาย**: ตรวจสอบและซ่อมแซมเส้นทางรูปภาพในหน้ารีวิวและหน้าย่อยต่างๆ
 
 ---
