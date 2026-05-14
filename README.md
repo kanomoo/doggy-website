@@ -89,30 +89,50 @@ The project uses SCSS for advanced styling. Main stylesheet is located at `scss/
 ### JavaScript
 Custom scripts are in `js/main.js`. The project uses jQuery and Bootstrap plugins for animations and responsive components.
 
-## 🔧 Development Notes (Reorganization Update - May 2026)
+## 🏗️ Project Organization (May 2026)
 
-The project structure has been organized to keep HTML files manageable:
+The project structure has been reorganized for better maintainability:
 
-- **Root Level**: Only `index.html` remains at the root for easy access.
-- **Pages Directory**: All other pages are moved to `pages/`.
-- **Sub-categorization**: Menus, reviews, and replies are further organized into subfolders.
+- **Root Level**: Only `index.html` remains at the root for easy access
+- **Pages Directory**: All content pages are in `pages/` folder
+- **Subfolders**: Menu categories, reviews, and replies are organized into dedicated subfolders
 
-### Pathing Guidelines
-When adding or modifying links, ensure relative paths are correct:
-- From **Root** to **Pages**: `pages/filename.html`
-- From **Pages** to **Assets**: `../css/`, `../images/`, etc.
-- From **Menu/Reviews** to **Root**: `../../index.html`
-- From **Menu/Reviews** to **Assets**: `../../css/`, `../../images/`, etc.
+### 📐 Path Guidelines
+
+When creating or modifying links, follow these pathing rules:
+
+**From Root `index.html`:**
+```
+pages/filename.html              # Link to pages
+pages/menu/menu-coffee.html      # Link to menu items
+```
+
+**From `/pages/` level pages (e.g., `contact.html`):**
+```
+../index.html                    # Link to root
+./about.html                     # Link to sibling page
+./menu/menu-cake.html            # Link to menu
+../css/style.css                 # Link to CSS
+../images/logo.png               # Link to images
+```
+
+**From nested pages (e.g., `pages/reviews/review-food.html`):**
+```
+../../index.html                 # Link to root
+../contact.html                  # Link to pages-level file
+./review-dog.html                # Link to sibling in same folder
+../../css/style.css              # Link to CSS
+../../images/gallery/pic.jpg     # Link to images
+```
+
+## 📝 Recent Updates
+
+- **File Reorganization**: Separated HTML files into structured folders (`pages/`, `pages/menu/`, `pages/reviews/`, `pages/replies/`)
+- **Link Normalization**: Fixed all CSS, JS, and image paths to match new structure
+- **HTML Validation**: Corrected malformed HTML tags in menu pages
+- **Order System**: Updated form actions and cart sidebar layout
+- **Missing Images**: Verified and corrected image paths across review pages
 
 ---
 
-**Last Updated:** 14 พฤษภาคม 2569 (หลังการจัดระเบียบไฟล์)
-
-## สรุปการแก้ไขล่าสุด
-- **จัดระเบียบไฟล์ HTML**: แยกไฟล์ลงในโฟลเดอร์ `pages/`, `pages/menu/`, `pages/reviews/`, และ `pages/replies/`
-- **แก้ไข Path ทั้งระบบ**: ปรับลิงก์ Assets (CSS, JS, Images) และลิงก์นำทาง (Navigation) ทั้งหมดให้ทำงานได้ถูกต้องตามโครงสร้างใหม่
-- **แก้ไขปุ่ม Add to Cart**: ซ่อมแซม Tag HTML ที่ผิดพลาดในหน้าเมนูทั้งหมด
-- **แก้ไขระบบ Order**: ปรับ Form Action และ Layout ของ Cart Sidebar ให้รองรับโครงสร้างโฟลเดอร์ใหม่และแสดงผลสวยงามขึ้น
-- **แก้ไขภาพหาย**: ตรวจสอบและซ่อมแซมเส้นทางรูปภาพในหน้ารีวิวและหน้าย่อยต่างๆ
-
----
+**Last Updated:** May 14, 2026 (File reorganization completed)
